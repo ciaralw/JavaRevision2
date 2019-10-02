@@ -53,19 +53,14 @@ public class Brackets {
 	//for additional case
 	public static boolean balancedBrackets2(String str) {
 		boolean balanced = false;
+		//boolean balanced = true;
 		
-		int index1 = 0;
-		int index2 = 0;
-		int index3 = 0;
-		int index4 = 0;
-		int index5 = 0;
-		int index6 = 0;
-		int count1 = 0;
-		int count2 = 0;
-		int count3 = 0;
-		int count4 = 0;
-		int count5 = 0;
-		int count6 = 0;
+		int index1 = 0;	int count1 = 0;
+		int index2 = 0; int count2 = 0;
+		int index3 = 0; int count3 = 0;
+		int index4 = 0; int count4 = 0;
+		int index5 = 0; int count5 = 0;
+		int index6 = 0; int count6 = 0;
 		
 		char[] charArray = str.toCharArray();
 				
@@ -102,17 +97,67 @@ public class Brackets {
 		 * check if the index of the closing bracket minus the index of the opening bracket is odd by checking if modulus 2 is equal to 1
 		 * , its 1 aka odd they are in the correct place
 		 */
-		if(count1==count2 && count3==count4 && count5==count6) {
-			if(((count1>0 && count2>0 && index2-index1%2==1)
-				|| (count3>0 && count4>0 && index4-index3%2==1 )
-				|| (count5>0 && count6>0 && index6-index5%2==1 ))){
-						balanced = true;
+//		if(count1==count2 && count3==count4 && count5==count6) {
+//			if(((count1>0 && count2>0 && index2-index1%2==1)
+//				&& (count3>0 && count4>0 && index4-index3%2==1 )
+//				&& (count5>0 && count6>0 && index6-index5%2==1 ))){
+//						balanced = true;
+//			}
+//		}
+		
+		System.out.println(index6);
+		boolean isBracketClosing = bracketsMatch(count1, count2, count3, count4, count5, count6);
+		boolean doCurlyBracketsRightPlace = curlyBracketsRightPlace(count1, count2, index1, index2);
+		
+		if(isBracketClosing){
+			if(((count1==0 && count2==0) || (count1>0 && count2>0  && (index2-index1)%2==1))
+				&& ((count3==0 && count4==0) || (count3>0 && count4>0 && (index4-index3)%2==1))
+				&& ((count5==0 && count6==0) || (count5>0 && count6>0 && (index6-index5)%2==1))){
+			balanced = true;
 			}
 		}
+		
+//		WORKS!!!!!
+//		if(count1==count2 && count3==count4 && count5==count6) {
+//			if(((count1==0 && count2==0) || (count1>0 && count2>0  && (index2-index1)%2==1))
+//				&& ((count3==0 && count4==0) || (count3>0 && count4>0 && (index4-index3)%2==1))
+//				&& ((count5==0 && count6==0) || (count5>0 && count6>0 && (index6-index5)%2==1))){
+//			balanced = true;
+//			}
+//		}
+		
+//		if(!(count1==count2 && count3==count4 && count5==count6)) {
+//			balanced = false;
+//		}
+//		else if((count1>0 && count2>0 && index2-index1%2==0)
+//				|| (count3>0 && count4>0 && index4-index3%2==0)
+//				|| (count5>0 && count6>0 && index6-index5%2==0 )){
+//			balanced = false;
+//			
+//		}
 		
 
 		
 		return balanced;
 	}
 	
+	public static boolean bracketsMatch(int count1, int count2, int count3, int count4, int count5, int count6) {
+		if(count1==count2 && count3==count4 && count5==count6) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public static boolean curlyBracketsRightPlace(int count1, int count2, int index1, int index2) {
+		if((count1==0 && count2==0) || (count1>0 && count2>0  && (index2-index1)%2==1)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
+	
+	}
 }
