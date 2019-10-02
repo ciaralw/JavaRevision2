@@ -14,35 +14,35 @@ public class Brackets {
 	public static boolean balancedBrackets(String str) {
 		boolean balanced = false;
 		
-		int count1 = 0;
-		int count2 = 0;
-		int count3 = 0;
-		int count4 = 0;
-		int count5 = 0;
-		int count6 = 0;
+		int openCurly = 0;
+		int closeCurly = 0;
+		int openBrace = 0;
+		int closeBrace = 0;
+		int openSquare = 0;
+		int closeSquare = 0;
 		
 		for(int index=0; index<str.length(); index++) {
 			if(str.charAt(index)=='{') {
-				count1++;
+				openCurly++;
 			}
 			else if(str.charAt(index)=='}') {
-				count2++;
+				closeCurly++;
 			}
 			else if(str.charAt(index)=='(') {
-				count3++;
+				openBrace++;
 			}
 			else if(str.charAt(index)==')') {
-				count4++;
+				closeBrace++;
 			}
 			else if(str.charAt(index)=='[') {
-				count5++;
+				openSquare++;
 			}
 			else if(str.charAt(index)==']') {
-				count6++;
+				closeSquare++;
 			}
 		}
 		
-		if(count1==count2 && count3==count4 && count5==count6) {
+		if(openCurly==closeCurly && openBrace==closeBrace && openSquare==closeSquare) {
 			balanced = true;
 		}
 		
