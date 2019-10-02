@@ -43,7 +43,7 @@ public class Crap {
 //		Arrays.sort(nums);
 //		System.out.println(nums[5]);
 
-		System.out.println(-9%2);
+		System.out.println(-1%2);
 		
 }
 }

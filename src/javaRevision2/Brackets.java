@@ -96,13 +96,21 @@ public class Brackets {
 			}
 		}
 		
+		/**
+		 * If the counts of opens and corresponding closes are equal move on to next if
+		 * If the counts of the open and close for a type of bracket are both greater than zero aka it contains that type of brackets then 
+		 * check if the index of the closing bracket minus the index of the opening bracket is odd by checking if modulus 2 is equal to 1
+		 * , its 1 aka odd they are in the correct place
+		 */
 		if(count1==count2 && count3==count4 && count5==count6) {
 			if(((count1>0 && count2>0 && index2-index1%2==1)
-				&& (count3>0 && count4>0 && index4-index3%2==1 )
-				&& (count5>0 && count6>0 && index6-index5%2==1 ))){
+				|| (count3>0 && count4>0 && index4-index3%2==1 )
+				|| (count5>0 && count6>0 && index6-index5%2==1 ))){
 						balanced = true;
 			}
 		}
+		
+
 		
 		return balanced;
 	}
