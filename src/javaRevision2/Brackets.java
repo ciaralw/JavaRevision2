@@ -4,6 +4,13 @@ import java.util.Arrays;
 
 public class Brackets {
 
+	/**
+	 * Method which counts how many there are of each opening bracket and each closing bracket
+	 * Sets balanced to true if each type of open bracket has a close (the counts are the same)
+	 * Otherwise balanced is set to false
+	 * @param String str
+	 * @return boolean balanced
+	 */
 	public static boolean balancedBrackets(String str) {
 		boolean balanced = false;
 		
