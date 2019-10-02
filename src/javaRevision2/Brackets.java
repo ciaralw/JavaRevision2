@@ -97,9 +97,9 @@ public class Brackets {
 		}
 		
 		if(count1==count2 && count3==count4 && count5==count6) {
-			if(((count1>0 && count2>0 && Math.abs(index1-index2)%2==1)
-				&& (count3>0 && count4>0 && Math.abs(index3-index4)%2==1 )
-				&& (count5>0 && count6>0 && Math.abs(index5-index6)%2==1 ))){
+			if(((count1>0 && count2>0 && index2-index1%2==1)
+				&& (count3>0 && count4>0 && index4-index3%2==1 )
+				&& (count5>0 && count6>0 && index6-index5%2==1 ))){
 						balanced = true;
 			}
 		}

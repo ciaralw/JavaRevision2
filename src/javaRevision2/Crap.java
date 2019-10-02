@@ -38,9 +38,12 @@ public class Crap {
 //		  System.out.println(count2);
 //		  System.out.println(result);
 
-		int[] nums = {1, 5, 3, 1, 8, 4};
-		int avg = 0;
-		Arrays.sort(nums);
-		System.out.println(nums[5]);
+//		int[] nums = {1, 5, 3, 1, 8, 4};
+//		int avg = 0;
+//		Arrays.sort(nums);
+//		System.out.println(nums[5]);
+
+		System.out.println(-9%2);
+		
 }
 }
